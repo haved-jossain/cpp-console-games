@@ -106,10 +106,10 @@ int main()
             }
 
             do{
-            cout<<"\n  Guess a letter:";
-            cin>>guess;
-            if(guess<'a' || guess>'z')
-                cout<<"\n  Invalid input. Enter a letter between a to z."<<endl;
+                cout<<"\n  Guess a letter:";
+                cin>>guess;
+                if(guess<'a' || guess>'z')
+                    cout<<"\n  Invalid input. Enter a letter between a to z."<<endl;
             }while(guess<'a' || guess>'z');
 
             int x=0;
