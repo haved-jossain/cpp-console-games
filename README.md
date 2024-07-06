@@ -1,4 +1,4 @@
-These programs were written for an introductory C++ programming course. All three games use conio.h, so they will only run on Windows.
+These programs were written for an introductory C++ programming course. All three games use conio.h, so can only be run on Windows.
 
 GNU Conpiler Collection is required to compile them. I used MinGW - Minimalist GNU for Windows (https://sourceforge.net/projects/mingw/).
 
