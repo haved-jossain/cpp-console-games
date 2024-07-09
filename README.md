@@ -9,3 +9,6 @@ Instructions for compiling and running, for example, Hangman from CMD:
    g++ Hangman.cpp -o Hangman
 4. Run using the following command:
    Hangman
+
+
+![image](https://github.com/haved-jossain/cpp-console-games/assets/145239371/b62ba09d-bba7-4514-807a-7bd1a2a59e38)
