@@ -1,3 +1,9 @@
+/*:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.*
+ *    Author: Javed Hossain       *
+ *    Website: javedhossain.com   *
+ *    Date: February 26, 2019     *
+ *.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:*/
+
 #include "sokoban.h"
 #include <cstdlib>
 #include <ctime>
