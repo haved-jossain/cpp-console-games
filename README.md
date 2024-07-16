@@ -2,13 +2,13 @@ These programs were written for an introductory C++ programming course. All thre
 
 GCC is required to compile them. I used MinGW - Minimalist GNU for Windows (https://sourceforge.net/projects/mingw/).
 
-Instructions for compiling and running, for example, Hangman from CMD:
+Instructions for compiling and running, for example, TicTacToe from CMD:
 
 1. Navigate to the folder containing the .cpp file
 2. Compile using the following command:
-   g++ Hangman.cpp -o Hangman
+   g++ tictactoe.cpp -o tictactoe
 4. Run using the following command:
-   Hangman
+   tictactoe
 
-
-![image](https://github.com/haved-jossain/cpp-console-games/assets/145239371/b62ba09d-bba7-4514-807a-7bd1a2a59e38)
+![image](https://github.com/user-attachments/assets/dfdb9bbc-3475-4ba3-b20d-79e89e18d897)
+![image](https://github.com/user-attachments/assets/56f6cf30-0300-484f-a916-36377210357e)
