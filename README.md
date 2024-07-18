@@ -10,6 +10,10 @@ Instructions for compiling and running, for example, TicTacToe from CMD:
 4. Run:
    tictactoe
 
-![image](https://github.com/user-attachments/assets/dfdb9bbc-3475-4ba3-b20d-79e89e18d897)
-![image](https://github.com/user-attachments/assets/486d2b98-edf7-48eb-82b2-1a25b2acbd0d)
+![1](https://github.com/user-attachments/assets/c6e65962-60a4-4cf0-a971-4046045fbf9c)
+
+![2](https://github.com/user-attachments/assets/21f4cf79-a337-4610-b21b-4339ecce02df)
+
+![4](https://github.com/user-attachments/assets/a692b802-42a9-455e-a51e-a47ca16cbbdb)
+
 
