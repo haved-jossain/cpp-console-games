@@ -14,6 +14,6 @@ Instructions for compiling and running, for example, TicTacToe from CMD:
 
 ![2](https://github.com/user-attachments/assets/21f4cf79-a337-4610-b21b-4339ecce02df)
 
-![4](https://github.com/user-attachments/assets/a692b802-42a9-455e-a51e-a47ca16cbbdb)
+![4](https://github.com/user-attachments/assets/69e95de6-7b3f-48bc-9fea-32ca0821dc3d)
 
 
