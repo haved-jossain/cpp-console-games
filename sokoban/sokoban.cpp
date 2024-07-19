@@ -2,29 +2,27 @@
  *    Author: Javed Hossain       *
  *    Website: javedhossain.com   *
  *    Date: February 26, 2019     *
- *.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:*/
+ .:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.*/
 
-#include "sokoban.h"
 #include <cstdlib>
 #include <ctime>
 #include <conio.h>
 #include <windows.h>
 #include <fstream>
-
-using namespace std;
+#include "sokoban.h"
 
 Sokoban::Sokoban()
 {
-    floorMap = new char*[ROW];
+    floorMap=new char*[ROW];
     for(int i=0; i<ROW; i++)
     {
-        floorMap[i] = new char[COL];
+        floorMap[i]=new char[COL];
     }
     for(int i=0; i<ROW; i++)
     {
         for(int j=0; j<COL; j++)
         {
-            floorMap[i][j] = ' ';
+            floorMap[i][j]=' ';
         }
     }
 }
@@ -77,7 +75,7 @@ void Sokoban::start()
                     }
                     else if(pr>0 && floorMap[pr-1][pc]==box)   // If player is trying to push the box upwards
                     {
-                        if(pr>1 && floorMap[pr-2][pc]!=wall && floorMap[pr-2][pc]!=box)  // If there is space to move the box upwards
+                        if(pr>1 && floorMap[pr-2][pc]!=wall && floorMap[pr-2][pc]!= box)  // If there is space to move the box upwards
                         {
                             updatePosition(pc,pr-1,pc,pr-2,box);
                             updatePosition(pc,pr,pc,pr-1,player);
@@ -158,7 +156,7 @@ void Sokoban::start()
                         }
                     }
                 }
-                int counter = 0;
+                int counter=0;
                 for(int i=0; i<destinationCounter; i++)
                 {
                     if(floorMap[boxCoordinates[i][0]][boxCoordinates[i][1]]==box)
@@ -166,10 +164,10 @@ void Sokoban::start()
                         counter++;
                     }
                 }
-                if(counter == destinationCounter)
+                if(counter==destinationCounter)
                 {
                     setCursorPosition(0,lineCount+1);
-                    cout<<" \aLevel complete!"<<endl;
+                    std::cout<<" \aLevel complete!"<<std::endl;
                     printExitInstructions();
                 }
             }
@@ -177,14 +175,14 @@ void Sokoban::start()
     }
 }
 
-bool Sokoban::loadMap(string level)
+bool Sokoban::loadMap(std::string level)
 {
-    string fileName = level;
+    std::string fileName=level;
     lineCount=0;
-    if(ifstream(fileName.c_str()))
+    if(std::ifstream(fileName.c_str()))
     {
-        ifstream in(fileName.c_str());
-        string line;
+        std::ifstream in(fileName.c_str());
+        std::string line;
         for(int i=0; getline(in,line); i++)
         {
             for(int j=0; j<line.size(); j++)
@@ -198,7 +196,7 @@ bool Sokoban::loadMap(string level)
     }
     else
     {
-        cout << "Error: Map file missing" << endl;
+        std::cout << "Error: Map file missing" << std::endl;
         return false;
     }
 }
@@ -236,9 +234,9 @@ void Sokoban::initializePosition()
 
 void Sokoban::setCursorPosition(short x, short y)
 {
-    static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    const HANDLE hOut=GetStdHandle(STD_OUTPUT_HANDLE);
     std::cout.flush();
-    COORD coord = { (SHORT)x, (SHORT)y };
+    COORD coord={ (SHORT)x, (SHORT)y };
     SetConsoleCursorPosition(hOut, coord);
 }
 
@@ -250,35 +248,35 @@ void Sokoban::printMaze()
         {
             if(floorMap[i][j]==player)
             {
-                cout<<player;
+                std::cout<<player;
             }
             else if(floorMap[i][j]==box)
             {
-                cout<<box;
+                std::cout<<box;
             }
             else if(floorMap[i][j]==destination)
             {
-                cout<<destination;
+                std::cout<<destination;
             }
             else if(floorMap[i][j]==space || floorMap[i][j]==0)
             {
-                cout<<space;
+                std::cout<<space;
             }
             else if(floorMap[i][j]==wall)
             {
-                cout<<wall;
+                std::cout<<wall;
             }
         }
-        cout<<endl;
+        std::cout<<std::endl;
     }
 }
 
 void Sokoban::updatePosition(short x1,short y1,short x2,short y2,char s)
 {
     setCursorPosition(x1,y1);
-    cout<<" ";
+    std::cout<<" ";
     setCursorPosition(x2,y2);
-    cout<<s;
+    std::cout<<s;
 }
 
 bool Sokoban::startLevel(short level)
@@ -298,24 +296,24 @@ void Sokoban::printIntroPage()
 {
     printBanner();
     printInstructions();
-    cout << endl;
+    std::cout << std::endl;
     printLegend();
-    cout << endl;
+    std::cout << std::endl;
 }
 
 void Sokoban::printExitInstructions()
 {
     setCursorPosition(1,lineCount+2);
-    cout<<"ESC = Exit | SPACE = Restart";
+    std::cout<<"ESC = Exit | SPACE = Restart";
 }
 
 bool Sokoban::exitGame()
 {
-    cout<<" Press SPACE to start, ESC to exit game.";
+    std::cout<<" Press SPACE to start, ESC to exit game.";
     char inputChar;
     do
     {
-        inputChar = getch();
+        inputChar=getch();
         if(inputChar==ESC)
         {
             return true;
@@ -328,38 +326,40 @@ bool Sokoban::exitGame()
 
 void Sokoban::printBanner()
 {
-    cout<<endl;
-    cout<<"   "<<(char)201;
-    for(int i=0; i<19; i++)
+    const int BANNER_LENGTH=25;
+
+    std::cout<<std::endl;
+    std::cout<<"   "<<(char)201;
+    for(int i=0; i<BANNER_LENGTH; i++)
     {
-        cout<<(char)205;
+        std::cout<<(char)205;
     }
-    cout<<(char)187<<endl;
-    cout<<"   "<<(char)186<<"   S O K O B A N   "<<(char)186<<endl;
-    cout<<"   "<<(char)200;
-    for(int i=0; i<19; i++)
+    std::cout<<(char)187<<std::endl;
+    std::cout<<"   "<<(char)186<<"      S O K O B A N      "<<(char)186<<std::endl;
+    std::cout<<"   "<<(char)200;
+    for(int i=0; i<BANNER_LENGTH; i++)
     {
-        cout<<(char)205;
+        std::cout<<(char)205;
     }
-    cout<<(char)188<<endl;
-    cout<<endl;
+    std::cout<<(char)188<<std::endl;
+    std::cout<<std::endl;
 }
 
 void Sokoban::printInstructions()
 {
-    cout<<" INSTRUCTIONS: "<<endl;
-    cout<<" - Use arrow keys to move the warehouse keeper."<<endl;
-    cout<<" - You can push the boxes but cannot pull them."<<endl;
-    cout<<" - Move all the boxes to positions marked with x."<<endl;
-    cout<<" - If you get stuck, restart the level and try again."<<endl;
+    std::cout<<" INSTRUCTIONS: "<<std::endl;
+    std::cout<<" - Use arrow keys to move the warehouse keeper."<<std::endl;
+    std::cout<<" - You can push the boxes but cannot pull them."<<std::endl;
+    std::cout<<" - Move all the boxes to positions marked with x."<<std::endl;
+    std::cout<<" - If you get stuck, restart the level and try again."<<std::endl;
 }
 
 void Sokoban::printLegend()
 {
-    cout<<" "<<player<<" = Player"<<endl;
-    cout<<" "<<box<<" = Box "<<endl;
-    cout<<" "<<destination<<" = Box destination"<<endl;
-    cout<<" "<<wall<<" = Wall"<<endl;
+    std::cout<<" "<<player<<" = Player"<<std::endl;
+    std::cout<<" "<<box<<" = Box "<<std::endl;
+    std::cout<<" "<<destination<<" = Box destination"<<std::endl;
+    std::cout<<" "<<wall<<" = Wall"<<std::endl;
 }
 
 void Sokoban::clearScreen()
