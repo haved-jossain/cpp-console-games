@@ -147,14 +147,14 @@ void TicTacToe::initializeSymbols()
 
 void TicTacToe::printBanner()
 {
-    const int BANNER_LENGTH=27;
+    const int BANNER_LENGTH=25;
     std::cout<<"   "<<(char)201;
     for(int i=0; i<BANNER_LENGTH; i++)
     {
         std::cout<<(char)205;
     }
     std::cout<<(char)187<<std::endl;
-    std::cout<<"   "<<(char)186<<"        TIC TAC TOE        "<<(char)186<<std::endl;
+    std::cout<<"   "<<(char)186<<"       TIC TAC TOE       "<<(char)186<<std::endl;
     std::cout<<"   "<<(char)200;
     for(int i=0; i<BANNER_LENGTH; i++)
     {
