@@ -33,12 +33,12 @@ void Hangman::start()
 
         std::cout<<"\n  Press ESC to quit, SPACE to play again.";
         char ch=getch();
-        if(ch==27)
+        if(ch == 27)
         {
             std::cout<<std::endl;
             return;
         }
-        else if(ch==32)
+        else if(ch == 32)
         {
             initGameState();
             clearScreen();
@@ -249,16 +249,16 @@ void Hangman::printInstructions()
 
 void Hangman::printBanner()
 {
-    const int BANNER_LENGTH = 19;
+    const int BANNER_LENGTH = 25;
     std::cout << "\n";
-    std::cout << "   " << (char)201;
+    std::cout << " " << (char)201;
     for(int i=0; i<BANNER_LENGTH; i++)
     {
         std::cout << (char)205;
     }
     std::cout << (char)187;
-    std::cout << "\n   " << (char)186 << "   H A N G M A N   " << (char)186;
-    std::cout << "\n   " << (char)200;
+    std::cout << "\n " << (char)186 << "      H A N G M A N      " << (char)186;
+    std::cout << "\n " << (char)200;
     for(int i=0; i<BANNER_LENGTH; i++)
     {
         std::cout << (char)205;
@@ -268,7 +268,7 @@ void Hangman::printBanner()
 
 bool Hangman::hasPlayerWon()
 {
-    int correctGuesses=0;
+    int correctGuesses = 0;
     for(int i=0; i<correctAnswer.size(); i++)
     {
         if(progress[i] != '_')
